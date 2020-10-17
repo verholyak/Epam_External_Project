@@ -245,7 +245,13 @@ goto tomcat home directory and Add below users to conf/tomcat-user.xml file
    ```
 1. Restart serivce and try to login to tomcat application from the browser. This time it should be Successful
 
+### Config TomCat from Jenkins
 
+<img src = "images/tom1.png" width = 800>
+<img src = "images/tom2.png" width = 800>
+<img src = "images/tom3.png" width = 800>
+
+------------------------------------------------------------
 
 ## II Етап
 
