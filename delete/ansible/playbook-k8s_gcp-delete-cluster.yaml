@@ -1,0 +1,12 @@
+---
+- hosts: ansible_server
+#  service_account_file: ./gcloud-service-account.json
+#  become: yes
+#  become_user: vova
+  remote_user: vova
+
+  tasks:
+  - name: Delete Kubernetes Cluster in GCP Cloud
+#    command: echo y | gcloud container clusters delete demo-k8s
+   command: gcloud container clusters delete demo-k8s
+   ignore_errors: yes

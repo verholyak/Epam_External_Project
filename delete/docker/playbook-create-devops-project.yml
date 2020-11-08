@@ -1,0 +1,28 @@
+---
+- hosts: dev_docker
+  become: true
+
+  tasks:
+
+  - name: stop current running container
+    command: docker stop play-devops-container
+    ignore_errors: yes
+
+  - name: remove stopped container
+    command: docker rm play-devops-container
+    ignore_errors: yes
+
+  - name: remove docker image
+    command: docker rmi verholyak/play-devops-image:latest
+    ignore_errors: yes
+
+#  - name: build docker images using war file
+#    command: docker build -t play-devops-image .
+#    args:
+#      chdir: /opt/docker
+
+  - name: push docker image from dockerhub
+    command: docker pull verholyak/play-devops-image:latest
+
+  - name: create container using play-devops-image
+    command: docker run -d --name play-devops-container -p 8081:8080 verholyak/play-devops-image:latest

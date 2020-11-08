@@ -1,0 +1,6 @@
+[ansible_server]
+localhost
+
+[docker_server]
+35.214.209.115
+

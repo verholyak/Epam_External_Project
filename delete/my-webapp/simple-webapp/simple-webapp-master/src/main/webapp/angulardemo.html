@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo AngularJS</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    
+
+  		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.min.js"></script>
+        <script src="aplikasi.js"></script>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    </head>
+    <body ng-app ng-controller="HaloController">
+        <h1>Demo AngularJS</h1>
+
+        Nama : <input type="text" ng-model="nama"> <br>
+        Halo {{nama}}
+        <br>
+        Tambah email : <input type="text" ng-model="email"> <button ng-click="tambahEmail(email)">+</button><br>
+
+        <div>
+            Daftar Email : 
+
+            <table border=1>
+               <tr ng-repeat="x in daftarEmail">
+                <td>{{x}}</td>
+                <td>
+                    <button ng-click="edit(x)">edit</button>
+                    <button ng-click="hapus(x)">hapus</button></td>
+               </tr>
+            </table>
+        </div>
+        
+        <hr>
+        Tanggal Server = {{tanggal}}
+        
+        <br>
+        
+        <button ng-click="updateTanggal()">Update Tanggal dari Server</button>
+        <button ng-click="startUpdateWaktu()">Start Update Otomatis</button>
+        <button ng-click="stopUpdateWaktu()">Stop Update Otomatis</button>
+
+        
+
+        <hr>
+
+        <div ng-class="{'btn btn-success': success, 'btn btn-warning': warning, 'btn btn-danger': danger}">Status</div>
+
+        <hr>
+
+        <button ng-click="success = true; warning=false; danger=false;">Success</button>
+        <button ng-click="success = false; warning=true; danger=false;">Warning</button>
+        <button ng-click="success = false; warning=false; danger=true;">Danger</button>
+    </body>
+</html>

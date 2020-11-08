@@ -1,0 +1,12 @@
+[ansible_server]
+localhost
+
+[dev_docker_server]
+35.214.209.115
+
+[dev_kubernetes_server]
+
+[stage_server]
+
+[prod_server]
+3.121.41.66

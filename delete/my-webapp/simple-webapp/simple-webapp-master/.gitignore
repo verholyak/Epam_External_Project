@@ -1,0 +1,9 @@
+# Maven Ignore
+target
+
+# Logger Ignore
+logs
+
+# Gradle Ignore
+.gradle
+build
