@@ -1,17 +1,14 @@
 # Epam External Project by Volodymyr Verholyak
-## Суть проекту: побудувати CI\CD процес
-* Tools які я використав в проекті:
 
 <img src = "images/p1.png" width = 800>
 
-* Основна схема роботи: 
 
 <img src = "images/p2.png" width = 800>
 
 
 
 
-## I Етап
+## I Step
 
 <img src = "images/p3.png" width = 800>
 <img src = "images/p4.png" width = 800>
@@ -552,7 +549,6 @@ Ansible is an open-source automation platform. It is very, very simple to set up
    kubectl get services -o wide
    ```
 
-## Ідея CI/CD процеса:
 
 <img src = "images/p11.png" width = 800>
 <img src = "images/p12.png" width = 800>
