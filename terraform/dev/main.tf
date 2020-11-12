@@ -1,7 +1,4 @@
-#----------------------------------------------------------
-# Use Terraform with GCP - Google Cloud Platform
-# Made by Vova Verholyak
-#-----------------------------------------------------------
+
 // export GOOGLE_CLOUD_KEYFILE_JSON="C:\git_epam\gcp-creds.json"
 
 # Configure the Google Cloud provider
@@ -35,7 +32,7 @@ resource "google_compute_instance" "dev-test" {
   name          = "server-dev-test"
   machine_type  = "e2-medium"
   zone          = "europe-west4-a"
-  metadata_startup_script = file("user-data.sh")
+  metadata_startup_script = file("user-data-docker.sh")
 
   boot_disk {
     initialize_params {

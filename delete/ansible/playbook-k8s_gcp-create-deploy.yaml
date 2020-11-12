@@ -1,8 +1,0 @@
----
-- hosts: localhost
-#  become: true
-
-  tasks:
-  - name: Create Kubernetes Cluster in GCP Cloud
-    command: gcloud container clusters create demo-k8s --num-nodes=1 --machine-type=custom-2-2048
-    ignore_errors: yes

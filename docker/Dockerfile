@@ -1,5 +1,5 @@
 FROM tomcat:8.0
 
-MAINTAINER Vova Verholyak
+LABEL mainteiner Vova_Verholyak
 
 COPY ./webapp.war /usr/local/tomcat/webapps

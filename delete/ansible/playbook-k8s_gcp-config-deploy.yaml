@@ -1,9 +1,0 @@
----
-- hosts: dev_ansible_server
-  become: yes
-  become_user: vova
-
-  tasks:
-  - name: Create Kubernetes Cluster in GCP Cloud
-    command: kubectl apply -f /opt/ansible_playbooks/k8s-gcp-config-deploy.yaml
-    ignore_errors: yes

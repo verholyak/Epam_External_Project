@@ -1,1 +1,0 @@
-# Epam External Project by Volodymyr Verholyak

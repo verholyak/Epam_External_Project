@@ -51,18 +51,6 @@ resource "aws_security_group" "web" {
   }
 }
 
-// resource "aws_eip" "my_static_ip" {
-//   instance = aws_launch_configuration.web.id
-//   vpc      = true                                 // vova
-//   //tags     = var.common_tags
-//   //tags = merge(var.common_tags, { Name = "${var.common_tags["Environment_dev"]} Server IP" })  // change envitonment tags, DEV STAGING PROD
-//   tags = {
-//     Name    = "Server IP"
-//     Owner   = "Vova Verholyak"
-//     Project = "EPAM"
-//   }
-// }
-
 resource "aws_launch_configuration" "web" { 
   //  name            = "WebServer-Highly-Available-LC" 
   name_prefix     = "WebServer-Highly-Available-LC-"              // добавить імя + префікс

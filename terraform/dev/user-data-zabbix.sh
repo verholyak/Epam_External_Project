@@ -2,7 +2,6 @@
 yum -y update
 yum -y install httpd
 
-
 myip=`ipaddr=$(hostname -I)`
 
 cat <<EOF > /var/www/html/index.html
@@ -25,16 +24,11 @@ EOF
 sudo service httpd start
 chkconfig httpd on
 
-sudo yum install -y yum-utils
-sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-sudo yum install docker-ce docker-ce-cli containerd.io -y
-sudo systemctl enable docker
-sudo systemctl start docker
-sudo service docker start
+sudo rpm -Uvh https://repo.zabbix.com/zabbix/5.0/rhel/7/x86_64/zabbix-agent-5.0.0-1.el7.x86_64.rpm
+sudo yum install -y zabbix-agent
 sudo useradd -u 12345 -G docker,google-sudoers,adm,video  -d /home/ansadmin -s /bin/bash -p $(echo pr0t3ct | openssl passwd -1 -stdin) ansadmin
 sudo su root
 echo "ansadmin ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 sudo su ansadmin
-docker run -d --name play-devops-container -p 8081:8080 verholyak/play-devops-image:latest
 sudo mkdir /home/ansadmin/.ssh 
 sudo ssh-keygen -t rsa -f /home/ansadmin/.ssh/id_rsa -q -P ""
