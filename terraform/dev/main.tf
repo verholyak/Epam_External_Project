@@ -1,6 +1,4 @@
 
-// export GOOGLE_CLOUD_KEYFILE_JSON="C:\git_epam\gcp-creds.json"
-
 # Configure the Google Cloud provider
 provider "google" {
   credentials = file("gcp-creds.json")
